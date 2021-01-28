@@ -14,13 +14,29 @@ public class UserRegistrationSystem {
         boolean result = match.matches(); // boolean for this check result comes true or false statement
 //        System.out.println(result);   // print result
         if (result == true)
-            System.out.println("First name is currect");
+            System.out.println("last name is currect");
         else
-            System.out.println("First name incurrect!!");
+            System.out.println("last name incurrect!!");
+    }
+    // creating a method for check the last name of the user
+    void checkLastName(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the last name: ");
+        String lastname = sc.nextLine();
+        Pattern p = Pattern.compile("^[A-za-z]{3,}$"); // simple regex here
+//        Matcher match = p.matcher("");
+        Matcher match = p.matcher(lastname);
+        boolean result = match.matches(); // boolean for this check result comes true or false statement
+//        System.out.println(result);   // print result
+        if (result == true)
+            System.out.println("last name is currect");
+        else
+            System.out.println("last name incurrect!!");
     }
 
     public static void main(String[] args) {
         UserRegistrationSystem obj = new UserRegistrationSystem();
         obj.checkFastName();
+        obj.checkLastName();
     }
 }
