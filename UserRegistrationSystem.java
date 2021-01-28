@@ -34,9 +34,25 @@ public class UserRegistrationSystem {
             System.out.println("last name incurrect!!");
     }
 
+    void checkEmailId(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Email Id: ");
+        String lastname = sc.nextLine();
+        Pattern p = Pattern.compile("^(.+)@(.+)$"); // simple regex here
+//        Matcher match = p.matcher("");
+        Matcher match = p.matcher(lastname);
+        boolean result = match.matches(); // boolean for this check result comes true or false statement
+//        System.out.println(result);   // print result
+        if (result == true)
+            System.out.println("Email name is currect");
+        else
+            System.out.println("Email name incurrect!!");
+    }
+
     public static void main(String[] args) {
         UserRegistrationSystem obj = new UserRegistrationSystem();
         obj.checkFastName();
         obj.checkLastName();
+        obj.checkEmailId();
     }
 }
