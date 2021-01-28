@@ -49,10 +49,26 @@ public class UserRegistrationSystem {
             System.out.println("Email name incurrect!!");
     }
 
+    void checkphnumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the ph number: ");
+        String lastname = sc.nextLine();
+        Pattern p = Pattern.compile("^[0-99]{2}[0-9]{10}"); // simple regex here
+//        Matcher match = p.matcher("");
+        Matcher match = p.matcher(lastname);
+        boolean result = match.matches(); // boolean for this check result comes true or false statement
+//        System.out.println(result);   // print result
+        if (result == true)
+            System.out.println("Ph number is currect");
+        else
+            System.out.println("Ph number incurrect!!");
+    }
+
     public static void main(String[] args) {
         UserRegistrationSystem obj = new UserRegistrationSystem();
         obj.checkFastName();
         obj.checkLastName();
         obj.checkEmailId();
+        obj.checkphnumber();
     }
 }
