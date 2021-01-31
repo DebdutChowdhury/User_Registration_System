@@ -66,9 +66,9 @@ public class UserRegistrationSystem {
 
     void passwordCheck(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the password(min: 8 char): ");
+        System.out.println("Enter the password: ");
         String lastname = sc.nextLine();
-        Pattern p = Pattern.compile("^[A-Z]{1}[0-9]{8,}"); // simple regex here for check password format one
+        Pattern p = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])"); // simple regex here for check password format
 //        Matcher match = p.matcher("");
         Matcher match = p.matcher(lastname);
         boolean result = match.matches(); // boolean for this check result comes true or false statement
@@ -77,7 +77,6 @@ public class UserRegistrationSystem {
             System.out.println("password format is currect");
         else {
             System.out.println("Password format is incurrect!!");
-            System.out.println("Password should be 8 cheracter!!");
         }
     }
 
