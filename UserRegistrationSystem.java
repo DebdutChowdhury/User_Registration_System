@@ -38,7 +38,7 @@ public class UserRegistrationSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Email Id: ");
         String lastname = sc.nextLine();
-        Pattern p = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"); // simple regex here for check email id
+        Pattern p = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"); // simple regex here for check all email id
 //        Matcher match = p.matcher("");
         Matcher match = p.matcher(lastname);
         boolean result = match.matches(); // boolean for this check result comes true or false statement
