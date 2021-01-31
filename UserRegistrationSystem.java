@@ -38,7 +38,7 @@ public class UserRegistrationSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Email Id: ");
         String lastname = sc.nextLine();
-        Pattern p = Pattern.compile("^(.+)@(.+)$"); // simple regex here for check email id
+        Pattern p = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"); // simple regex here for check email id
 //        Matcher match = p.matcher("");
         Matcher match = p.matcher(lastname);
         boolean result = match.matches(); // boolean for this check result comes true or false statement
@@ -64,11 +64,11 @@ public class UserRegistrationSystem {
             System.out.println("Ph number format is incurrect!!");
     }
 
-    void passwordCheck1(){
+    void passwordCheck(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the password(min: 8 char): ");
         String lastname = sc.nextLine();
-        Pattern p = Pattern.compile("^[A-Za-z0-9]{8,}"); // simple regex here for check password format one
+        Pattern p = Pattern.compile("^[A-Z]{1}[0-9]{8,}"); // simple regex here for check password format one
 //        Matcher match = p.matcher("");
         Matcher match = p.matcher(lastname);
         boolean result = match.matches(); // boolean for this check result comes true or false statement
@@ -89,7 +89,7 @@ public class UserRegistrationSystem {
         System.out.println("2. Check last name");
         System.out.println("3. Check Email id");
         System.out.println("4. Check phone number");
-        System.out.println("5. Check password format one");
+        System.out.println("5. Check password format");
         System.out.println("");
         System.out.print("Enter number ==> ");
         int chose = sc.nextInt();
@@ -108,8 +108,9 @@ public class UserRegistrationSystem {
                 obj.checkphnumber();
                 break;
             case 5:
-                obj.passwordCheck1();
+                obj.passwordCheck();
                 break;
         }
     }
 }
+
